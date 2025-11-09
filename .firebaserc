@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "hospital-management-syst-523dd"
+  },
+  "targets": {
+    "hospital-management-app-352ef": {
+      "hosting": {
+        "app": [
+          "hospital-management-app-352ef"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
