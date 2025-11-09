@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareSync - Doctor Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/doctor-dashboard.css">
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <nav class="top-nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <span class="logo-text">CareSync</span>
+        <span class="portal-badge">Doctor Portal</span>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-notification">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+        </button>
+        <button class="btn-logout" id="logoutBtn">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Dashboard Container -->
+  <div class="dashboard-container">
+    
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+      <div class="welcome-content">
+        <h1>Welcome, <span id="doctorName">Dr. Loading...</span></h1>
+        <p class="welcome-subtitle"><span id="doctorSpecialization">Loading...</span></p>
+      </div>
+      <div class="stats-cards">
+        <div class="stat-card">
+          <div class="stat-icon stat-primary">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <p class="stat-value" id="todayAppointments">0</p>
+            <p class="stat-label">Today's Appointments</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon stat-success">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <div class="stat-info">
+            <p class="stat-value" id="totalPatients">0</p>
+            <p class="stat-label">Total Patients</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Patient Search -->
+    <section class="search-section">
+      <div class="search-header">
+        <h2>Patient Search</h2>
+      </div>
+      <div class="search-box">
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" id="patientSearch" placeholder="Search by name, member ID, or email...">
+      </div>
+      <div id="searchResults" class="search-results"></div>
+    </section>
+
+    <!-- Today's Appointments -->
+    <section class="appointments-section">
+      <div class="section-header">
+        <h2>Today's Appointments</h2>
+        <button class="btn-view-all">View All</button>
+      </div>
+      <div class="appointments-grid" id="appointmentsGrid">
+        <div class="loading-state">Loading appointments...</div>
+      </div>
+    </section>
+
+    <!-- Recent Patients -->
+    <section class="patients-section">
+      <div class="section-header">
+        <h2>Recent Patients</h2>
+        <button class="btn-view-all">View All</button>
+      </div>
+      <div class="patients-table-container">
+        <table class="patients-table" id="patientsTable">
+          <thead>
+            <tr>
+              <th>Member ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Phone</th>
+              <th>Last Visit</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="loading-row">
+              <td colspan="6">Loading patients...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Patient Details Modal -->
+  <div id="patientModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Patient Details</h2>
+        <button class="modal-close" id="closeModal">&times;</button>
+      </div>
+      <div class="modal-body" id="patientDetailsBody">
+        <!-- Patient details will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/doctor-dashboard.js"></script>
+</body>
+</html>
