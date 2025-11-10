@@ -67,3 +67,15 @@ node_modules/
 
 # dataconnect generated files
 .dataconnect
+
+# dependencies and system
+node_modules/
+dist/
+.env
+.firebase/
+.vscode/
+.DS_Store
+
+# firebase generated
+public/404.html
+public/__MACOSX
