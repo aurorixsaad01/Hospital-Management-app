@@ -2,7 +2,7 @@
 node_modules/
 npm-debug.log
 yarn-error.log
-package-lock.json
+# NOTE: package-lock.json is NEEDED for npm ci - do not exclude it
 
 # Version control
 .git
@@ -30,7 +30,6 @@ build/
 
 # OS
 Thumbs.db
-.DS_Store
 
 # Testing
 .mocha
@@ -40,3 +39,8 @@ coverage/
 # Miscellaneous
 *.log
 .npmrc
+
+# Documentation (optional - exclude to reduce image size)
+DOCKER_SETUP.md
+DOCKER_QUICK_REFERENCE.md
+README.md
