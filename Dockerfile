@@ -1,5 +1,5 @@
 # Build stage - using Node.js 20 Alpine for small, secure image
-FROM node:20-alpine as builder
+FROM node:20-alpine AS builder
 
 # Set working directory
 WORKDIR /app
@@ -23,7 +23,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install only production dependencies
-RUN npm ci --only=production
+RUN npm ci --omit=dev
 
 # Copy built app from builder stage
 COPY --from=builder /app . 
