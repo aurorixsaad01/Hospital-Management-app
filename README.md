@@ -103,12 +103,21 @@ hospital-management-system/
    ```
    git clone https://github.com/aurorixsaad01/Hospital-Management-app.git
    ```
-2. Set up Firebase (follow instructions in `firebase.json`)
-3. Serve locally or deploy:
+2. Install node.js: (as per OS)
+   ```
+3. Set up Firebase:
+   ```
+   npm install -g firebase-tools
+   ```
+4. Login: 
+   ```
+    firebase login
+   ```
+5. Serve locally or deploy:
    ```
    firebase serve --only hosting
    ```
-4. Access the app at (http://localhost:5000) or your Firebase Hosting domain
+6. Access the app at (http://localhost:5000) or your Firebase Hosting domain
 
 ***
 
